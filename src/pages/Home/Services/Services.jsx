@@ -11,7 +11,7 @@ const Services = () => {
   }, []);
 
   return (
-    <div className="mt-4">
+    <div className="mt-32">
       <div className="text-center">
         <h3 className="text-2xl font-bold text-orange-600">Service</h3>
         <h2 className="text-5xl">Our Service Area</h2>
@@ -28,6 +28,10 @@ const Services = () => {
             key={service._id}
           />
         ))}
+      </div>
+
+      <div className="flex flex-col justify-center items-center my-10">
+      <button className="btn btn-error btn-outline text-red-700 w-max mx-auto">Show More</button>
       </div>
     </div>
   );
