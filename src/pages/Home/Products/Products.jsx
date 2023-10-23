@@ -28,6 +28,11 @@ const Products = () => {
           />
         ))}
       </div>
+      <div className="flex flex-col items-center justify-center mt-16">
+        <button className="btn btn-warning btn-outline bg-gray-100 text-orange-600 ">
+          More Product
+        </button>
+      </div>
     </div>
   );
 };
