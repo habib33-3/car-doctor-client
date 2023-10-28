@@ -29,7 +29,11 @@ const router = createBrowserRouter([
 
       {
         path: "/checkout/:id",
-        element: <BookService />,
+        element: (
+          <PrivateRoute>
+            <BookService />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(
             `https://car-doctor-server-delta-indol.vercel.app/services/${params.id}`

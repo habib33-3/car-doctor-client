@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-const BookingRow = ({ booking, handleDelete }) => {
-  const { _id, service_title, img, date, price } = booking;
+const BookingRow = ({ booking, handleDelete, handleConfirm }) => {
+  const { _id, service_title, img, date, price, status } = booking;
 
   return (
     <tr>
@@ -39,7 +39,16 @@ const BookingRow = ({ booking, handleDelete }) => {
       <td>{date}</td>
       <td>${price}</td>
       <th>
-        <button className="btn btn-ghost btn-xs">details</button>
+        {status === "confirm" ? (
+          <span>Confirmed</span>
+        ) : (
+          <button
+            onClick={() => handleConfirm(_id)}
+            className="btn btn-ghost btn-xs"
+          >
+            Confirm
+          </button>
+        )}
       </th>
     </tr>
   );
